@@ -5,12 +5,16 @@ import java.util.List;
 
 public class StringUtils {
 
-	public static String reverse(String s) {
-		List<String> tempArray = new ArrayList<String>(s.length());
-		for (int i = 0; i < s.length(); i++) {
-			tempArray.add(s.substring(i, i + 1));
+	public static String reverse(String inputStr) {
+
+		if (null == inputStr) {
+			throw new IllegalArgumentException("string cannot be null");
 		}
-		StringBuilder reversedString = new StringBuilder(s.length());
+		List<String> tempArray = new ArrayList<String>(inputStr.length());
+		for (int i = 0; i < inputStr.length(); i++) {
+			tempArray.add(inputStr.substring(i, i + 1));
+		}
+		StringBuilder reversedString = new StringBuilder(inputStr.length());
 		for (int i = tempArray.size() - 1; i >= 0; i--) {
 			reversedString.append(tempArray.get(i));
 		}
