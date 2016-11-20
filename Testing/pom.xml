@@ -140,6 +140,9 @@
 					</execution>
 				</executions>
 				<configuration>
+					<propertiesUser>
+						<csv.location>${project.basedir}/src/test/jmeter</csv.location>
+					</propertiesUser>
 					<testResultsTimestamp>false</testResultsTimestamp>
 					<jmeterExtensions>
 						<artifact>com.avinash.learn:Testing:1.0.0</artifact>
