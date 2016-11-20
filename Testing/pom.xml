@@ -140,6 +140,7 @@
 					</execution>
 				</executions>
 				<configuration>
+					<testResultsTimestamp>false</testResultsTimestamp>
 					<jmeterExtensions>
 						<artifact>com.avinash.learn:Testing:1.0.0</artifact>
 					</jmeterExtensions>
