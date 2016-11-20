@@ -9,7 +9,6 @@ import org.apache.jmeter.samplers.SampleResult;
 
 public class StringUtilsStressTest extends AbstractJavaSamplerClient implements Serializable {
 
-	private static final String METHOD_TAG = "method";
 	private static final String ARG1_TAG = "inputStr";
 
 	private static final long serialVersionUID = -4537358620199171581L;
@@ -17,7 +16,6 @@ public class StringUtilsStressTest extends AbstractJavaSamplerClient implements 
 	@Override
 	public Arguments getDefaultParameters() {
 		Arguments defaultParameters = new Arguments();
-		defaultParameters.addArgument(METHOD_TAG, "reverse");
 		defaultParameters.addArgument(ARG1_TAG, "Avinash");
 
 		return defaultParameters;
@@ -30,7 +28,7 @@ public class StringUtilsStressTest extends AbstractJavaSamplerClient implements 
 		sampleResult.sampleStart();
 
 		try {
-			String message = StringUtils.reverse(ARG1_TAG);
+			String message = StringUtils.reverse(javaSamplerContext.getParameter("inputStr"));
 			sampleResult.sampleEnd();
 			sampleResult.setSuccessful(Boolean.TRUE);
 			sampleResult.setResponseCodeOK();
